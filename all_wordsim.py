@@ -27,4 +27,7 @@ if __name__=='__main__':
       total_size += 1    
     print "%6s" % str(i+1), "%20s" % filename, "%15s" % str(total_size),
     print "%15s" % str(not_found),
-    print "%15.4f" % spearmans_rho(assign_ranks(manual_dict), assign_ranks(auto_dict))
+    try:
+        print "%15.4f" % spearmans_rho(assign_ranks(manual_dict), assign_ranks(auto_dict))
+    except ZeroDivisionError:
+        print "%15.4f" % -1.0 
