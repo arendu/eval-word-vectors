@@ -30,4 +30,4 @@ if __name__=='__main__':
     try:
         print "%15.4f" % spearmans_rho(assign_ranks(manual_dict), assign_ranks(auto_dict))
     except ZeroDivisionError:
-        print "%15.4f" % -1.0 
+        print "%15.4f" % -0.0 
