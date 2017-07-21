@@ -9,9 +9,11 @@ if __name__=='__main__':
   word_vec_file = sys.argv[1]
   word_sim_dir = sys.argv[2]
   try:
-      top_vocab = sys.argv[3]  
-  except IndexError:
+    top_vocab = int(float(sys.argv[3])) #accepts answers in 1eX notation.
+    if top_vocab < 0:
       top_vocab = 1e6
+  except IndexError:
+    top_vocab = 1e6
   word_vecs = read_word_vectors(word_vec_file, int(top_vocab))
   print '================================================================================='
   print "%6s" %"Serial", "%20s" % "Dataset", "%15s" % "Num Pairs", "%15s" % "Not found", "%15s" % "Rho"
